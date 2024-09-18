@@ -1,4 +1,6 @@
-{
+import dotenv from "dotenv"
+
+export default {
   "development": {
     "username": "root",
     "password": null,
