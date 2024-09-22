@@ -1,29 +1,31 @@
 'use strict';
-import sequelize from '../../db';
-import {Sequelize} from 'sequelize'
+import sequelize from '../../db.js';
+import {DataTypes} from 'sequelize'
 
-const User = sequelize.define('Users', {
+ const User = sequelize.define('Users', {
   id: {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
-    type: Sequelize.INTEGER
+    type: DataTypes.INTEGER
   },
   firstName: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   },
   lastName: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   },
   email: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   },
   createdAt: {
     allowNull: false,
-    type: Sequelize.DATE
+    type: DataTypes.DATE
   },
   updatedAt: {
     allowNull: false,
-    type: Sequelize.DATE
+    type: DataTypes.DATE
   }
 })
+
+export default User
