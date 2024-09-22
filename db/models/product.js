@@ -1,33 +1,33 @@
 'use strict';
 
 import sequelize from '../../db';
-import {Sequelize} from 'sequelize'
-const Product = sequelize.define('Product', {
+import {DataTypes, Sequelize} from 'sequelize'
+export const Product = sequelize.define('Product', {
   id: {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
-    type: Sequelize.INTEGER
+    type: DataTypes.INTEGER
   },
   productName: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   },
   price: {
-    type: Sequelize.DECIMAL
+    type: DataTypes.DECIMAL
   },
   size: {
-    type: Sequelize.ENUM
+    type: DataTypes.ENUM
   },
   userId: {
-    type: Sequelize.INTEGER
+    type: DataTypes.INTEGER
   },
   createdAt: {
     allowNull: false,
-    type: Sequelize.DATE
+    type: DataTypes.DATE
   },
   updatedAt: {
     allowNull: false,
-    type: Sequelize.DATE
+    type: DataTypes.DATE
   }
 },{
   paranoid:true,
