@@ -1,5 +1,4 @@
 import { Sequelize } from "sequelize";
-import { createUserModel } from "./postgres/model/userSchema.js";
 import config from "./config/config.js";
 
     const {username,  password, database , host , dialect , port} = config.development
