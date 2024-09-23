@@ -10,8 +10,11 @@ app.use(express.json());
 app.use(cors());  // Note: Added () to call the cors function
 
 // Routes
-app.use(router);
+app.use(router) ;
 
+app.use((err, req, res, next) => {
+    res.status(400).json({message:err.message})
+})
 sequelize.authenticate().then(() => {
     app.listen(8000, () => {
         console.log('Server connected at port 8000');
