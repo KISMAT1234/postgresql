@@ -12,6 +12,18 @@ export const Product = sequelize.define('Product', {
   productName: {
     type: DataTypes.STRING
   },
+  isFeatured: {
+    type: DataTypes.STRING,
+    defaultValue:false,
+    allowNull: false,
+    validate:{
+      isIn: {
+        args: [[true, false]],
+        msg: 'isFeatured value must be true or false',
+      }
+    }
+
+  },
   price: {
     type: DataTypes.DECIMAL
   },
