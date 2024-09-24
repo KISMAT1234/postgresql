@@ -12,9 +12,9 @@ app.use(cors());  // Note: Added () to call the cors function
 // Routes
 app.use(router) ;
 
-app.use('*', catchAsync (async (req,res,next) =>{
-    throw new appError('This is error ', 404)
-}))
+// app.use('*', catchAsync (async (req,res,next) =>{
+//     throw new appError('This is error ', 404)
+// }))
 
 app.use((err, req, res, next) => {
     res.status(400).json({message:err.message})
