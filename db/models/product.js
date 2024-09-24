@@ -22,16 +22,31 @@ export const Product = sequelize.define('Product', {
         msg: 'isFeatured value must be true or false',
       }
     }
-
+  },
+  productImage:{
+    type:Sequelize.ARRAY(Sequelize.STRING),
+     allowNUll : false
+  },
+  description:{
+    type:Sequelize.TEXT,
+    allowNull:false,
   },
   price: {
     type: DataTypes.DECIMAL
   },
+  
   size: {
     type: DataTypes.ENUM
   },
   userId: {
     type: DataTypes.INTEGER
+  },
+  createdBy: {
+    type: Sequelize.INTEGER,
+    refrences: {
+      model:'user',
+      key:'id'
+    }
   },
   createdAt: {
     allowNull: false,
