@@ -1,0 +1,26 @@
+//Installing cli
+npm install --save-dev sequelize-cli
+
+//intializing project
+npx sequelize-cli init
+
+//CREATING FIRST model
+npx sequelize-cli model:generate --name Employee --attributes firstName:string,address:string,salary:Integer
+
+//
+
+
+//Migrating Table
+npx sequelize-cli db:migrate --config ./config/config.js
+
+
+
+//Undo for migration
+npx sequelize-cli db:migrate:undo --config ./config/config.js
+
+
+//creating seeder file 
+npx sequelize-cli seed:generate --name admin-user
+
+
+
